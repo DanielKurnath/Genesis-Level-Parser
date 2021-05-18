@@ -7,6 +7,8 @@ map_height = input('Enter Map height: ')
 output_file = input('Enter Output File: ')
 level_number = input('Level Number: ')
 
+output_header = output_file + '.h'
+
 with open(map_file) as map_file:
     with open(collision_file) as collision_file:
 
@@ -43,3 +45,6 @@ with open(map_file) as map_file:
                 else:
                     output_file.write('{' + line.rstrip() + '}\n')
             output_file.write('};\n')
+        with open(output_header, mode='w') as output_header_file:
+            output_header_file.write('extern u8 level' + level_number + '[];\n')
+            output_header_file.write('extern u8 collision' + level_number + '[];\n')
