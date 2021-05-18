@@ -24,6 +24,7 @@ with open(map_file) as map_file:
         test_output_exists.close()
 
         with open(output_file, mode='w') as output_file:
+            output_file.write('#include <genesis.h>')
             headers = 'u8 level' + level_number + '[' + map_height + '][' + map_width + '] = {\n'
             output_file.write(headers)
             line_count = 0
@@ -45,8 +46,8 @@ with open(map_file) as map_file:
                 else:
                     output_file.write('{' + line.rstrip() + '}\n')
             output_file.write('};\n\n')
-            output_file.write('int level_' + level_number + '_map_height ' + map_height + ';\n')
-            output_file.write('int level_' + level_number + '_map_width ' + map_width + ';\n')
+            output_file.write('int level_' + level_number + '_map_height = ' + map_height + ';\n')
+            output_file.write('int level_' + level_number + '_map_width = ' + map_width + ';\n')
         with open(output_header, mode='w') as output_header_file:
             output_header_file.write('#ifndef _LEVEL' + level_number + '_H_\n')
             output_header_file.write('#define _LEVEL' + level_number + '_H_\n')
