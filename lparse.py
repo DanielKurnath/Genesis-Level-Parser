@@ -1,21 +1,11 @@
 import csv
 
-# map_file = input('Enter Map File Name: ')
-# collision_file = input('Enter Collision File Name: ')
-# map_width = input('Enter Map Width: ')
-# map_height = input('Enter Map height: ')
-# output_file = input('Enter Output File: ')
-# level_number = input('Level Number: ')
-
-map_file = "G:\\Google Drive\\Genesis Dev\\Code\\2021-05-16 - Battle Engine Demo Attempt" \
-           " 2 (Incomplete)\\res\\Test Level_world.csv"
-collision_file = "G:\\Google Drive\\Genesis Dev\\Code\\2021-05-16 - " \
-                 "Battle Engine Demo Attempt 2 (Incomplete)\\res\\Test Level_collision.csv"
-map_width = '40'
-map_height = '28'
-output_file = "G:\\Google Drive\\Genesis Dev\\Code\\2021-05-16 - Battle Engine Demo Attempt " \
-              "2 (Incomplete)\\res\\Test.World.c"
-level_number = '1'
+map_file = input('Enter Map File Name: ')
+collision_file = input('Enter Collision File Name: ')
+map_width = input('Enter Map Width: ')
+map_height = input('Enter Map height: ')
+output_file = input('Enter Output File: ')
+level_number = input('Level Number: ')
 
 with open(map_file) as map_file:
     with open(collision_file) as collision_file:
