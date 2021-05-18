@@ -46,5 +46,8 @@ with open(map_file) as map_file:
                     output_file.write('{' + line.rstrip() + '}\n')
             output_file.write('};\n')
         with open(output_header, mode='w') as output_header_file:
+            output_header_file.write('#ifndef _LEVEL' + level_number + '_H_\n')
+            output_header_file.write('#define _LEVEL' + level_number + '_H_\n')
             output_header_file.write('extern u8 level' + level_number + '[];\n')
             output_header_file.write('extern u8 collision' + level_number + '[];\n')
+            output_header_file.write('#endif')
